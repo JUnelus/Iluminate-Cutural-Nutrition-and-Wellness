@@ -12,7 +12,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Home - Illuminate Cultural Nutrition"/>
     <meta property="og:description"
-          content="Caring and Culturally Inclusive Nutrition Counseling BOOK A FREE Call Welcome to Illuminate Cultural Nutrition! I am here to [&hellip;]"/>
+          content="Haitian Dietitian and Cultural Nutritionist specializing in Diabetes, Heart Health, and Gut Wellness for Caribbean and African communities. Virtual counseling in NC, FL, and IL."/>
     <meta property="og:url" content="index.html"/>
     <meta property="og:site_name" content="Illuminate Cultural Nutrition"/>
     <meta property="article:modified_time" content="2025-12-24T16:50:00+00:00"/>
@@ -405,7 +405,7 @@
         }
 
         .ast-header-search .slide-search .search-field {
-            background-color:(--ast-global-dark-bg-style);
+            background-color: var(--ast-global-dark-bg-style);
         }
 
         .ast-archive-title {
@@ -7067,32 +7067,74 @@
 			margin-top: 20px !important;
 		}
 
-		/* --- NEW FIX: Area Specialties Spacing (Prevent Overlap) --- */
-		/* This targets the text blocks that were sitting on top of the images */
-		.elementor-element-f79bea1,
-		.elementor-element-8ab3d7e,
-		.elementor-element-cdfd9ee,
-		.elementor-element-9d4d0ea,
-		.elementor-element-cccaad4,
-		.elementor-element-ee2c7b2 {
-			margin-top: 20px !important; /* Forces the text to move BELOW the image */
-			margin-bottom: 20px !important;
-			position: relative !important;
-			top: 0 !important;
-		}
+        /* Fix Specialty Layout: Grid View */
+        .elementor-element-c3fc7f7 {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+            gap: 30px !important;
+            padding: 40px 5% !important;
+            width: 100% !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+        }
 
-		/* Ensure images in Specialties are centered and have breathing room */
-		.elementor-element-205088d img,
-		.elementor-element-aaa4d93 img,
-		.elementor-element-e3d0583 img,
-		.elementor-element-34aa5c2 img,
-		.elementor-element-ccd1c9e img,
-		.elementor-element-ce6b0d6 img {
-			display: block !important;
-			margin: 0 auto !important;
-			max-width: 150px !important; /* Adjust size as needed */
-			height: auto !important;
-		}
+        /* Fix Overlapping Text & Style the Cards */
+        .elementor-element-07b1401, .elementor-element-d8cb9c3, .elementor-element-a63ce8f, 
+        .elementor-element-1e4f2ac, .elementor-element-a21b423, .elementor-element-b3c85e1 {
+            background: #fff !important;
+            padding: 30px 20px !important;
+            border-radius: 12px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+            transition: transform 0.3s ease !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            height: auto !important;
+            min-height: 350px !important;
+            width: 100% !important;
+        }
+
+        .elementor-element-07b1401:hover { transform: translateY(-5px); }
+
+        /* Fix image sizing within cards */
+        .elementor-element-c3fc7f7 .elementor-widget-image {
+            width: 120px !important;
+            margin-bottom: 20px !important;
+        }
+
+        .elementor-element-c3fc7f7 .elementor-widget-image img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Ensure text stays below image and wraps correctly */
+        .elementor-element-c3fc7f7 .elementor-widget-text-editor {
+            margin-top: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+        }
+
+        .elementor-element-c3fc7f7 .elementor-widget-image {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+        }
+
+        .elementor-element-c3fc7f7 ul {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .elementor-element-c3fc7f7 li {
+            font-size: 1rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 0 !important;
+        }
 	</style>
 </head>
 
@@ -7379,8 +7421,14 @@
                                              data-id="91cb8a9" data-element_type="widget"
                                              data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">Caring and
-                                                    Culturally Inclusive Nutrition Counseling </h2></div>
+                                               <h1 class="elementor-heading-title" style="font-size: clamp(2rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 15px;">
+                                                   Nourish Your Body without <br><span style="color: var(--ast-global-color-0);">Giving Up Your Culture.</span>
+                                               </h1>
+                                               <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 25px; color: #555;">
+                                                   Specialized medical nutrition therapy for Caribbean and African heritage communities. 
+                                                   <strong>100% judgment-free. 100% culturally rooted.</strong>
+                                               </p>
+                                            </div>
                                         </div>
                                         <div class="elementor-element elementor-widget elementor-widget-image"
                                              style="margin-top: 20px; margin-bottom: 20px;">
@@ -7394,15 +7442,49 @@
                                              data-id="edeb168" data-element_type="widget"
                                              data-widget_type="button.default">
                                             <div class="elementor-widget-container">
-                                                <div class="elementor-button-wrapper">
+                                                <div class="elementor-button-wrapper" style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
                                                     <a class="elementor-button elementor-button-link elementor-size-sm"
                                                        href="https://my.practicebetter.io/#/628070ec2a53bd15316c52f2/bookings?s=6291995c3f42dbed50def316">
 						<span class="elementor-button-content-wrapper">
 									<span class="elementor-button-text">BOOK A FREE Call</span>
 					</span>
                                                     </a>
+                                                    <a class="elementor-button elementor-button-link elementor-size-sm" 
+                                                       style="background-color: transparent; border: 2px solid var(--ast-global-color-0); color: var(--ast-global-color-0);"
+                                                       href="#contact">
+						<span class="elementor-button-content-wrapper">
+									<span class="elementor-button-text">Nou pale Kreyòl — Klike la a</span>
+					</span>
+                                                    </a>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Impact Ribbon: Data-Driven Urgency -->
+                                <div style="background: var(--ast-global-color-0); color: #fff; padding: 15px 0; text-align: center;">
+                                    <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px; font-size: 1.1rem; line-height: 1.4;">
+                                        <strong>Did you know?</strong> According to the CDC, Black and Caribbean adults are approximately <strong>60% more likely</strong> to be diagnosed with diabetes than non-Hispanic white adults. We provide the <strong>culturally tailored advice</strong> you need.
+                                    </div>
+                                </div>
+                                <div style="background: #fdfaf1; padding: 20px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; text-align: center;">
+                                    <p style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 15px; color: #888;">As Featured In</p>
+                                    <div style="display: flex; justify-content: center; align-items: center; gap: 40px; opacity: 0.7; filter: grayscale(100%);">
+                                        <img src="img/rebel.webp" alt="Media Logo" style="height: 30px; width: auto;">
+                                        <img src="https://i0.wp.com/iculturalnutrition.com/wp-content/uploads/2025/11/pbs.jpg" alt="PBS" style="height: 40px; width: auto;">
+                                        <span style="font-family: 'Crimson Text', serif; font-weight: bold; font-size: 1.2rem;">Black Issues Forum</span>
+                                    </div>
+                                </div>
+                                <!-- Lead Magnet Section -->
+                                <div style="background: #f9f9f9; padding: 60px 20px; text-align: center; border-top: 2px solid var(--ast-global-color-0);">
+                                    <div style="max-width: 800px; margin: 0 auto;">
+                                        <h2 style="color: var(--ast-global-color-2); margin-bottom: 15px;">Get Your Free "Healthy Caribbean Starter Guide"</h2>
+                                        <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">
+                                            Download 5 Low-Glycemic Haitian Recipes and learn how to enjoy your cultural favorites while reaching your health goals.
+                                        </p>
+                                        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                                            <input type="email" placeholder="Enter your email" style="max-width: 300px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                                            <button style="background: var(--ast-global-color-0); color: #fff; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Download Now</button>
                                         </div>
                                     </div>
                                 </div>
@@ -7418,7 +7500,7 @@
                                             <div class="elementor-widget-container">
                                                 <p><strong>Welcome to Illuminate Cultural Nutrition! </strong>I am here
                                                     to help you nourish your body without you giving up the flavors,
-                                                    traditions, and cultural foods that make you who you are. Whether
+                                                    traditions, and cultural foods that make you who you are. <strong>By focusing on food-as-medicine, I help clients reduce their A1C levels by an average of 1.5% while still enjoying traditional stews and rice.</strong> Whether
                                                     you’re Caribbean, African, American or someone who loves and values
                                                     cultural eating:</p>
                                                 <ul>
@@ -7559,17 +7641,14 @@
                                                      class="attachment-medium_large size-medium_large wp-image-3802"
                                                      alt="Diabetes and Nutrition Support"/></div>
                                         </div>
-                                        <div class="elementor-element elementor-element-0f8e753 e-con-full e-flex e-con e-child"
-                                             data-id="0f8e753" data-element_type="container">
-                                            <div class="elementor-element elementor-element-f79bea1 elementor-widget elementor-widget-text-editor"
-                                                 data-id="f79bea1" data-element_type="widget"
-                                                 data-widget_type="text-editor.default">
-                                                <div class="elementor-widget-container">
-                                                    <ul>
-                                                        <li><strong>Pre-diabetes, Diabetes: Type 1 &amp;2, Insulin
-                                                            Resistance, Weight Concerns</strong></li>
-                                                    </ul>
-                                                </div>
+                                        <div class="elementor-element elementor-element-f79bea1 elementor-widget elementor-widget-text-editor"
+                                             data-id="f79bea1" data-element_type="widget"
+                                             data-widget_type="text-editor.default">
+                                            <div class="elementor-widget-container">
+                                                <ul>
+                                                    <li><strong>Pre-diabetes, Diabetes: Type 1 &amp; 2, Insulin
+                                                        Resistance, Weight Concerns</strong></li>
+                                                </ul>
                                             </div>
                                         </div>
                                     </div>
@@ -7637,10 +7716,8 @@
                                              data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
                                                 <ul>
-                                                    <li class="cvGsUA direction-ltr align-start para-style-body">
-                                                        <strong><span
-                                                                class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Digestive Health: </span></strong><span
-                                                            class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Gut Imbalances, Constipation, Bloating, Heartburn, Irritable Bowels, Chronic Diarrhea, Food Allergies.</span>
+                                                    <li>
+                                                        <strong>Digestive Health: </strong>Gut Imbalances, Constipation, Bloating, Heartburn, Irritable Bowels, Chronic Diarrhea, Food Allergies.
                                                     </li>
                                                 </ul>
                                             </div>
@@ -7663,12 +7740,8 @@
                                              data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
                                                 <ul>
-                                                    <li class="cvGsUA direction-ltr align-start para-style-body">
-                                                        <strong><span
-                                                                class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Preventive Care: </span></strong><span
-                                                            class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Men&#8217;s health, </span><span
-                                                            class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Women&#8217;s health, </span><span
-                                                            class="a_GcMg font-feature-liga-off font-feature-clig-off font-feature-calt-off text-decoration-none text-strikethrough-none">Kids and Teens Nutrition for Development.</span>
+                                                    <li>
+                                                        <strong>Preventive Care: </strong>Men&#8217;s health, Women&#8217;s health, Kids and Teens Nutrition for Development.
                                                     </li>
                                                 </ul>
                                             </div>
