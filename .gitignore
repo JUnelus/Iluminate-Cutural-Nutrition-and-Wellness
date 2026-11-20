@@ -1,0 +1,8 @@
+# Ignore WordPress system files if you ever add them
+wp-config.php
+node_modules/
+.DS_Store
+*.log
+# Database dumps (contain user accounts and secrets)
+database/
+*.sql
