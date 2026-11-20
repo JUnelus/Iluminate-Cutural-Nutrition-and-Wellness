@@ -73,8 +73,14 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button {
-    background-color: #C9ABAB;
-    font-size: 11px;
+    background-color: #970000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button:hover,
+.elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button:focus-visible {
+    background-color: #6f0000;
 }
 
 .elementor-1286 .elementor-element.elementor-element-edeb168 > .elementor-widget-container {
@@ -1650,7 +1656,7 @@
     }
 
     .elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button {
-        font-size: 8px;
+        font-size: 13px;
     }
 
     .elementor-1286 .elementor-element.elementor-element-c9e5a58 {
