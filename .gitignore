@@ -6,3 +6,6 @@ node_modules/
 # Database dumps (contain user accounts and secrets)
 database/
 *.sql
+
+# IDE settings
+.idea/
