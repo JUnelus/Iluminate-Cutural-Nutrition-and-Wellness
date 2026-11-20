@@ -1,0 +1,366 @@
+{
+ "blocks": [
+  {
+   "key": "Home",
+   "html": "<a href=\"\">Home</a>"
+  },
+  {
+   "key": "About Me",
+   "html": "<a href=\"#about\">About Me</a>"
+  },
+  {
+   "key": "Services",
+   "html": "<a href=\"#services\">Services</a>"
+  },
+  {
+   "key": "Contact",
+   "html": "<a href=\"#contact\">Contact</a>"
+  },
+  {
+   "key": "Schedule: (910) 290-6479",
+   "html": "Schedule: (910) 290-6479"
+  },
+  {
+   "key": "Nourish Your Body without Giving Up Your Culture.",
+   "html": "Nourish Your Body without <br/>Giving Up Your Culture."
+  },
+  {
+   "key": "Specialized medical nutrition therapy for Caribbean and African heritage communities. 100% judgment-free. 100% culturally rooted.",
+   "html": "Specialized medical nutrition therapy for Caribbean and African heritage communities. <strong>100% judgment-free. 100% culturally rooted.</strong>"
+  },
+  {
+   "key": "BOOK A FREE Call",
+   "html": "BOOK A FREE Call"
+  },
+  {
+   "key": "Nou pale Kreyòl — Klike la a",
+   "html": "Nou pale Kreyòl — Klike la a"
+  },
+  {
+   "key": "Did you know? According to the CDC, Black and Caribbean adults are approximately 60% more likely to be diagnosed with diabetes than non-Hispanic white adults. We provide the culturally tailored advice you need.",
+   "html": "<strong>Did you know?</strong> According to the CDC, Black and Caribbean adults are approximately <strong>60% more likely</strong> to be diagnosed with diabetes than non-Hispanic white adults. We provide the <strong>culturally tailored advice</strong> you need."
+  },
+  {
+   "key": "As Featured In",
+   "html": "As Featured In"
+  },
+  {
+   "key": "Get Your Free \"Healthy Caribbean Starter Guide\"",
+   "html": "Get Your Free \"Healthy Caribbean Starter Guide\""
+  },
+  {
+   "key": "Download 5 Low-Glycemic Haitian Recipes and learn how to enjoy your cultural favorites while reaching your health goals.",
+   "html": "Download 5 Low-Glycemic Haitian Recipes and learn how to enjoy your cultural favorites while reaching your health goals."
+  },
+  {
+   "key": "Email address",
+   "html": "Email address"
+  },
+  {
+   "key": "Send Me the Guide",
+   "html": "Send Me the Guide"
+  },
+  {
+   "key": "Welcome to Illuminate Cultural Nutrition! I am here to help you nourish your body without you giving up the flavors, traditions, and cultural foods that make you who you are. By focusing on food-as-medicine, I help clients reduce their A1C levels by an average of 1.5% while still enjoying traditional stews and rice. Whether you’re Caribbean, African, American or someone who loves and values cultural eating:",
+   "html": "<strong>Welcome to Illuminate Cultural Nutrition! </strong>I am here to help you nourish your body without you giving up the flavors, traditions, and cultural foods that make you who you are. <strong>By focusing on food-as-medicine, I help clients reduce their A1C levels by an average of 1.5% while still enjoying traditional stews and rice.</strong> Whether you’re Caribbean, African, American or someone who loves and values cultural eating:"
+  },
+  {
+   "key": "I meet you where you are with compassion, respect, and zero judgment.",
+   "html": "I meet you where you are with compassion, respect, and zero judgment."
+  },
+  {
+   "key": "Your culture is not the problem. Your food is not the enemy. Together, we make them part of the solution.",
+   "html": "Your culture is not the problem. Your food is not the enemy. Together, we make them part of the solution."
+  },
+  {
+   "key": "One-on-One Nutrition Counseling (convenient online visits)",
+   "html": "One-on-One Nutrition Counseling (convenient online visits)"
+  },
+  {
+   "key": "Cultural/Ethnic/Traditional Food Education",
+   "html": "Cultural/Ethnic/Traditional Food Education"
+  },
+  {
+   "key": "Medically Tailored In-Home Cooking Classes and Grocery Tours (Triangle Area, North Carolina Only)",
+   "html": "Medically Tailored In-Home Cooking Classes and Grocery Tours (Triangle Area, North Carolina Only)"
+  },
+  {
+   "key": "Virtual Cooking Classes and Online Grocery Tours Services",
+   "html": "Virtual Cooking Classes and Online Grocery Tours Services"
+  },
+  {
+   "key": "Workshops & Speaking Engagements (Traditional/Ethnic/Cultural Food Focus)",
+   "html": "Workshops &amp; Speaking Engagements (Traditional/Ethnic/Cultural Food Focus)"
+  },
+  {
+   "key": "Nutrition Education for Youth Sports and Healthy Development",
+   "html": "Nutrition Education for Youth Sports and Healthy Development"
+  },
+  {
+   "key": "Supplements and Edible Herbs Education",
+   "html": "Supplements and Edible Herbs Education"
+  },
+  {
+   "key": "My Approach",
+   "html": "My Approach"
+  },
+  {
+   "key": "Personalized and Cultural Food Preferences",
+   "html": "Personalized and Cultural Food Preferences"
+  },
+  {
+   "key": "Medical Nutrition Therapy and Education",
+   "html": "Medical Nutrition Therapy and Education"
+  },
+  {
+   "key": "Functional and Holistic Health",
+   "html": "Functional and Holistic Health"
+  },
+  {
+   "key": "Provide nutrition support as a lifestyle over quick fixes",
+   "html": "Provide nutrition support as a lifestyle over quick fixes"
+  },
+  {
+   "key": "I encourage the people I work with to enjoy the taste and flavor of the foods that fit their health!",
+   "html": "I encourage the people I work with to enjoy the taste and flavor of the foods that fit their health!"
+  },
+  {
+   "key": "Learn more",
+   "html": "<a href=\"#services\"> Learn more </a>"
+  },
+  {
+   "key": "Learn more about Willande, cultural Dietitian Nutritionist",
+   "html": "<a href=\"#about\"> Learn more about Willande, cultural Dietitian Nutritionist </a>"
+  },
+  {
+   "key": "Moin Pale Kreyòl Ayisyen. Rele’m nan Telephone: 910-290-6479, pou plis enfòmasyon.",
+   "html": "<strong>Moin Pale Kreyòl Ayisyen. Rele’m nan Telephone: 910-290-6479, pou plis enfòmasyon.</strong>"
+  },
+  {
+   "key": "Area Specialties",
+   "html": "Area Specialties"
+  },
+  {
+   "key": "Pre-diabetes, Diabetes: Type 1 & 2, Insulin Resistance, Weight Concerns",
+   "html": "<strong>Pre-diabetes, Diabetes: Type 1 &amp; 2, Insulin Resistance, Weight Concerns</strong>"
+  },
+  {
+   "key": "High Cholesterol, High Blood Pressure, Chronic Pain/Inflammation, Chronic Fatigue",
+   "html": "<strong>High Cholesterol, High Blood Pressure, Chronic Pain/Inflammation, Chronic Fatigue</strong>"
+  },
+  {
+   "key": "Depression, Anxiety, Lack of Focus/ADHD, Disordered Eating",
+   "html": "<strong>Depression, Anxiety, Lack of Focus/ADHD, Disordered Eating</strong>"
+  },
+  {
+   "key": "Gut Imbalances, Constipation, Bloating, Heartburn, IBS, Food Allergies",
+   "html": "<strong>Gut Imbalances, Constipation, Bloating, Heartburn, IBS, Food Allergies</strong>"
+  },
+  {
+   "key": "Men’s Health, Women’s Health, Kids & Teens Nutrition for Development",
+   "html": "<strong>Men’s Health, Women’s Health, Kids &amp; Teens Nutrition for Development</strong>"
+  },
+  {
+   "key": "Nutrition Education for Kids & Teens in Sports",
+   "html": "<strong>Nutrition Education for Kids &amp; Teens in Sports</strong>"
+  },
+  {
+   "key": "We accept Insurance",
+   "html": "We accept Insurance"
+  },
+  {
+   "key": "Self-Pay",
+   "html": "Self-Pay"
+  },
+  {
+   "key": "No insurance? Don’t worry. Contact me at info@iculturalnutrition.com or call at 910-290-6479 and I’ll work out a plan with you.",
+   "html": "No insurance? Don’t worry. Contact me at <a href=\"mailto:info@iculturalnutrition.com\">info@iculturalnutrition.com</a> or call at 910-290-6479 and I’ll work out a plan with you."
+  },
+  {
+   "key": "Why Choose A Cultural Dietitian?",
+   "html": "Why Choose A Cultural Dietitian?"
+  },
+  {
+   "key": "I Respect Your Cultural Roots",
+   "html": "<strong>I Respect Your Cultural Roots</strong>"
+  },
+  {
+   "key": "No shaming. I help you build healthier habits around the foods you know and love.",
+   "html": "No shaming. I help you build healthier habits around the foods you know and love."
+  },
+  {
+   "key": "My approach focuses on people from different cultural and health experiences, including the challenges and the strengths.",
+   "html": "My approach focuses on people from different cultural and health experiences, including the challenges and the strengths."
+  },
+  {
+   "key": "I Listen First",
+   "html": "<strong>I Listen First</strong>"
+  },
+  {
+   "key": "Your story matters and so do your traditions, health goals, and barriers.",
+   "html": "Your story matters and so do your traditions, health goals, and barriers."
+  },
+  {
+   "key": "I Believe in Sustainable, Real-Life Wellness",
+   "html": "<strong>I Believe in Sustainable, Real-Life Wellness</strong>"
+  },
+  {
+   "key": "Small, steady, consistent steps that fit your lifestyle and keep you connected to who you are.",
+   "html": "Small, steady, consistent steps that fit your lifestyle and keep you connected to who you are."
+  },
+  {
+   "key": "How It Works",
+   "html": "How It Works"
+  },
+  {
+   "key": "1. Schedule your free 15-minute call",
+   "html": "1. Schedule your free 15-minute call"
+  },
+  {
+   "key": "We will cover specific health goals; you’ll get to ask questions and schedule your first initial nutrition appointment.",
+   "html": "We will cover specific health goals; you’ll get to ask questions and schedule your first initial nutrition appointment."
+  },
+  {
+   "key": "2. Meet with your Cultural Nutrition expert",
+   "html": "2. Meet with your Cultural Nutrition expert"
+  },
+  {
+   "key": "One-on-one nutrition counseling (Virtual appointments). Schedule follow-up visits.",
+   "html": "One-on-one nutrition counseling (Virtual appointments). Schedule follow-up visits."
+  },
+  {
+   "key": "3. Take steps to improve your health, create new habits and get results",
+   "html": "3. Take steps to improve your health, create new habits and get results"
+  },
+  {
+   "key": "Receive nutrition education, accountability, and encouragement personalized to your health needs. Medical nutrition therapy and education during follow-up visits. Apply information for best results.",
+   "html": "Receive nutrition education, accountability, and encouragement personalized to your health needs. Medical nutrition therapy and education during follow-up visits. Apply information for best results."
+  },
+  {
+   "key": "Testimonials",
+   "html": "Testimonials"
+  },
+  {
+   "key": "“Thank you for listening to me and helping me. I appreciate your wealth of knowledge.” Linda J.",
+   "html": "“Thank you for listening to me and helping me. I appreciate your wealth of knowledge.” <strong>Linda J.</strong>"
+  },
+  {
+   "key": "“Ever since I started meeting with you, I’m eating better and I’m starting to gain the weight I’ve lost. You explain things to me in more details, which helps me apply them better.” Sarah L.",
+   "html": "“Ever since I started meeting with you, I’m eating better and I’m starting to gain the weight I’ve lost. You explain things to me in more details, which helps me apply them better.” <strong>Sarah L.</strong>"
+  },
+  {
+   "key": "“Thank you for helping me improve my digestion, I’m less bloated and am able to enjoy more food.” Chris L.",
+   "html": "“Thank you for helping me improve my digestion, I’m less bloated and am able to enjoy more food.” <strong>Chris L.</strong>"
+  },
+  {
+   "key": "When I meet with you, you help me so much. You have a lot of knowledge about nutrition, and you make things easier to understand and apply.” Louis M.",
+   "html": "When I meet with you, you help me so much. You have a lot of knowledge about nutrition, and you make things easier to understand and apply.” <strong>Louis M.</strong>"
+  },
+  {
+   "key": "Ready to Start?",
+   "html": "Ready to Start?"
+  },
+  {
+   "key": "Change your life today. Honor your culture. Invest in your health. Let’s build a plan that supports your body and your food.",
+   "html": "Change your life today. <br/>Honor your culture. <br/>Invest in your health. Let’s build a plan that supports your body and your food."
+  },
+  {
+   "key": "Book your consultation",
+   "html": "<a href=\"https://my.practicebetter.io/#/628070ec2a53bd15316c52f2/bookings?s=6291995c3f42dbed50def316\"> Book your consultation </a>"
+  },
+  {
+   "key": "Media",
+   "html": "Media"
+  },
+  {
+   "key": "Willande Unelus has been featured in:",
+   "html": "Willande Unelus has been featured in:"
+  },
+  {
+   "key": "Black Issues Forum | Health at Different Stages of Life | Season 38 |",
+   "html": "<strong>Black Issues Forum | Health at Different Stages of Life | Season 38 | </strong>"
+  },
+  {
+   "key": "Episode 25 | Starting @ minute 15",
+   "html": "<strong>Episode 25 | Starting @ minute 15</strong>"
+  },
+  {
+   "key": "CONTACT US",
+   "html": "CONTACT US"
+  },
+  {
+   "key": "Phone: 910-290-6479 (call or text)",
+   "html": "<strong>Phone: <a href=\"tel:9102906479\">910-290-6479</a> (call or text)</strong>"
+  },
+  {
+   "key": "Email: info@iculturalnutrition.com",
+   "html": "<strong>Email: <a href=\"mailto:info@iculturalnutrition.com\">info@iculturalnutrition.com</a></strong>"
+  },
+  {
+   "key": "We are based in North Carolina and also provide nutrition services in Florida and Illinois.",
+   "html": "We are based in North Carolina and also provide nutrition services in Florida and Illinois."
+  },
+  {
+   "key": "Illuminate Cultural Nutrition",
+   "html": "<strong>Illuminate Cultural Nutrition</strong>"
+  },
+  {
+   "key": "Caring and culturally sensitive Nutrition counseling",
+   "html": "<a href=\"#services\">Caring and culturally sensitive Nutrition counseling</a>"
+  },
+  {
+   "key": "Cultural nutritionist and dietitian Raleigh",
+   "html": "<a href=\"https://www.facebook.com/illuminateculturalnutrition/\">Cultural nutritionist and dietitian Raleigh</a>"
+  },
+  {
+   "key": "Address",
+   "html": "<strong>Address</strong>"
+  },
+  {
+   "key": "Virtual (Online) Nutrition Care",
+   "html": "Virtual (Online) Nutrition Care"
+  },
+  {
+   "key": "Call Us: (910) 290-6479",
+   "html": "<strong>Call Us</strong>: <a href=\"tel:9102906479\">(910) 290-6479</a>"
+  },
+  {
+   "key": "Email Us: info@iculturalnutrition.com",
+   "html": "Email Us: <a href=\"mailto:info@iculturalnutrition.com\">info@iculturalnutrition.com</a>"
+  },
+  {
+   "key": "Copyright © 2025 Illuminate Cultural Nutrition",
+   "html": "Copyright © 2025 Illuminate Cultural Nutrition"
+  }
+ ],
+ "attrs": [
+  "Illuminate Cultural Nutrition",
+  "Primary Site Navigation",
+  "Schedule: (910) 290-6479",
+  "Instagram",
+  "Facebook",
+  "Linkedin",
+  "YouTube",
+  "Main menu toggle",
+  "Site Navigation: Primary Menu",
+  "Traditional Cultural Food - Plantains and Caribbean Cuisine",
+  "CanvasRebel",
+  "Enter your email",
+  "Willande Unelus - Cultural Nutritionist",
+  "Diabetes and Nutrition Support",
+  "Blood Pressure and Cardiovascular Health",
+  "Mental Health Nutrition Support",
+  "Digestive Health Support",
+  "Preventive Care Nutrition",
+  "Sports Nutrition",
+  "Aetna Insurance Accepted",
+  "Blue Cross Blue Shield Insurance Accepted",
+  "Rebel Logo",
+  "Illuminate Cultural Nutrition logo",
+  "Footer Widget 1",
+  "Site Navigation: Footer Menu",
+  "Footer Widget 4",
+  "Menu",
+  "Footer Widget 3"
+ ]
+}
