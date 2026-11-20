@@ -17,7 +17,7 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-e7be65d:not(.elementor-motion-effects-element-type-background), .elementor-1286 .elementor-element.elementor-element-e7be65d > .elementor-motion-effects-container > .elementor-motion-effects-layer {
-    background-image: url("https://i0.wp.com/iculturalnutrition.com/wp-content/uploads/2025/12/Raleigh-Durham-Cary-nutritionist-3.png?fit=1366%2C768&ssl=1");
+    background-image: url("../img/hero.webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,8 +73,14 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button {
-    background-color: #C9ABAB;
-    font-size: 11px;
+    background-color: #970000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button:hover,
+.elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button:focus-visible {
+    background-color: #6f0000;
 }
 
 .elementor-1286 .elementor-element.elementor-element-edeb168 > .elementor-widget-container {
@@ -609,7 +615,7 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-e89fd09::before, .elementor-1286 .elementor-element.elementor-element-e89fd09 > .elementor-background-video-container::before, .elementor-1286 .elementor-element.elementor-element-e89fd09 > .e-con-inner > .elementor-background-video-container::before, .elementor-1286 .elementor-element.elementor-element-e89fd09 > .elementor-background-slideshow::before, .elementor-1286 .elementor-element.elementor-element-e89fd09 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1286 .elementor-element.elementor-element-e89fd09 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
-    background-image: url("https://i0.wp.com/iculturalnutrition.com/wp-content/uploads/2025/10/cultural-dietitian-nutritionist-in-Raleigh-Durham-Cary-area-.webp?fit=2304%2C1728&ssl=1");
+    background-image: none;
     --background-overlay: '';
     background-position: top center;
 }
@@ -1035,7 +1041,7 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-6896645 > .elementor-widget-container {
-    background-image: url("https://i0.wp.com/iculturalnutrition.com/wp-content/uploads/2025/10/newgoldendietitianutritionist.webp?fit=1080%2C1080&ssl=1");
+    background-image: none;
 }
 
 .elementor-1286 .elementor-element.elementor-element-6896645.elementor-element {
@@ -1151,7 +1157,7 @@
 }
 
 .elementor-1286 .elementor-element.elementor-element-d9f9e30::before, .elementor-1286 .elementor-element.elementor-element-d9f9e30 > .elementor-background-video-container::before, .elementor-1286 .elementor-element.elementor-element-d9f9e30 > .e-con-inner > .elementor-background-video-container::before, .elementor-1286 .elementor-element.elementor-element-d9f9e30 > .elementor-background-slideshow::before, .elementor-1286 .elementor-element.elementor-element-d9f9e30 > .e-con-inner > .elementor-background-slideshow::before, .elementor-1286 .elementor-element.elementor-element-d9f9e30 > .elementor-motion-effects-container > .elementor-motion-effects-layer::before {
-    background-image: url("https://i0.wp.com/iculturalnutrition.com/wp-content/uploads/2025/10/unique-nutrition-scaled.jpeg?fit=2560%2C1638&ssl=1");
+    background-image: none;
     --background-overlay: '';
 }
 
@@ -1650,7 +1656,7 @@
     }
 
     .elementor-1286 .elementor-element.elementor-element-edeb168 .elementor-button {
-        font-size: 8px;
+        font-size: 13px;
     }
 
     .elementor-1286 .elementor-element.elementor-element-c9e5a58 {
@@ -2240,4 +2246,41 @@
     .elementor-1286 .elementor-element.elementor-element-a87cadc {
         font-size: 10px;
     }
+}
+/* How It Works: the step pictures were hosted on the old WordPress server and are no
+   longer available, so they were removed. Reset the negative margins that overlaid the
+   step text on those pictures and give the steps a simple, readable layout. */
+.elementor-1286 .elementor-element:is(.elementor-element-d7cece3, .elementor-element-b506b9f, .elementor-element-4ab3891, .elementor-element-0a3a5b4, .elementor-element-83cc0ed, .elementor-element-6a026e5) > .elementor-widget-container {
+    margin: 0 !important;
+}
+
+.elementor-1286 .elementor-element:is(.elementor-element-d7cece3, .elementor-element-b506b9f, .elementor-element-4ab3891) {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: var(--ast-global-color-2);
+    margin-bottom: 6px;
+}
+
+.elementor-1286 .elementor-element:is(.elementor-element-d7cece3, .elementor-element-b506b9f, .elementor-element-4ab3891, .elementor-element-0a3a5b4, .elementor-element-83cc0ed, .elementor-element-6a026e5),
+.elementor-1286 .elementor-element:is(.elementor-element-d7cece3, .elementor-element-b506b9f, .elementor-element-4ab3891, .elementor-element-0a3a5b4, .elementor-element-83cc0ed, .elementor-element-6a026e5) * {
+    text-align: left !important;
+}
+
+.elementor-1286 .elementor-element-d7cece3 ol,
+.elementor-1286 .elementor-element-d7cece3 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.elementor-1286 .elementor-element-d7cece3 p,
+.elementor-1286 .elementor-element-b506b9f p,
+.elementor-1286 .elementor-element-4ab3891 p {
+    margin-bottom: 0;
+}
+
+.elementor-1286 .elementor-element:is(.elementor-element-b5d4462, .elementor-element-9da1a36, .elementor-element-33d57a3) {
+    margin-top: 0 !important;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
