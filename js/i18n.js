@@ -67,12 +67,30 @@
         }
     }
 
+    /* A translation may carry its own <a> (for blocks that contain a link). When the
+       matched element already sits inside a link, keep that link and insert only the
+       translated text, so links are never nested. */
+    function unwrapLinks(html) {
+        var tpl = document.createElement('template');
+        tpl.innerHTML = html;
+        tpl.content.querySelectorAll('a').forEach(function (a) {
+            while (a.firstChild) a.parentNode.insertBefore(a.firstChild, a);
+            a.remove();
+        });
+        return tpl.innerHTML;
+    }
+
     function applyPage(lang) {
         if (!matches) collect();
         var dict = window.ICN_I18N_HT;
         matches.forEach(function (m) {
             if (!original.has(m.el)) original.set(m.el, m.el.innerHTML);
-            m.el.innerHTML = lang === 'ht' && dict ? dict.blocks[m.key] : original.get(m.el);
+            if (lang === 'ht' && dict) {
+                var html = dict.blocks[m.key];
+                m.el.innerHTML = m.el.closest('a') && /<a[\s>]/i.test(html) ? unwrapLinks(html) : html;
+            } else {
+                m.el.innerHTML = original.get(m.el);
+            }
         });
         attrMatches.forEach(function (m) {
             m.el.setAttribute(m.attr, lang === 'ht' ? dict.attrs[m.en] : m.en);

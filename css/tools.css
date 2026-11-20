@@ -1,8 +1,9 @@
 /* Interactive tools: plate builder, health-goal quiz, insurance checker, booking,
    WhatsApp button and language switch. Brand colors come from the Astra theme. */
 :root {
-    --icn-green: #5c8607;
-    --icn-green-dark: #476805;
+    /* Darker than the theme green so small text passes WCAG AA (6.7:1 on white, 5.4:1 on --icn-green-soft). */
+    --icn-green: #456604;
+    --icn-green-dark: #334c03;
     --icn-green-soft: #e3e9d8;
     --icn-olive: #343f1e;
     --icn-cream: #fdfaf1;
@@ -77,9 +78,11 @@
 .icn-btn--primary { background: var(--icn-red); color: #fdfaf1; }
 .icn-btn--primary:hover { background: var(--icn-red-dark); color: #fdfaf1; }
 .icn-btn--green { background: var(--icn-green); color: #fff; }
-.icn-btn--green:hover { background: var(--icn-green-dark); color: #fff; }
+.icn-tool .icn-btn--green:focus { background: var(--icn-green); color: #fff; }
+.icn-tool .icn-btn--green:hover { background: var(--icn-green-dark); color: #fff; }
 .icn-btn--ghost { background: transparent; color: var(--icn-green); border-color: var(--icn-green); }
-.icn-btn--ghost:hover { background: var(--icn-green); color: #fff; }
+.icn-tool .icn-btn--ghost:focus { background: transparent; color: var(--icn-green); }
+.icn-tool .icn-btn--ghost:hover { background: var(--icn-green); color: #fff; }
 .icn-btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .icn-center .icn-btn-row { justify-content: center; }
 
@@ -183,7 +186,8 @@
     font: 700 .85rem/1 'Plus Jakarta Sans', sans-serif;
     cursor: pointer;
 }
-.icn-cat[aria-selected="true"] { background: var(--icn-green); color: #fff; }
+.icn-tool .icn-cat:hover, .icn-tool .icn-cat:focus { background: #fff; color: var(--icn-green); }
+.icn-tool .icn-cat[aria-selected="true"], .icn-tool .icn-cat[aria-selected="true"]:hover, .icn-tool .icn-cat[aria-selected="true"]:focus { background: var(--icn-green); color: #fff; }
 .icn-foods { display: flex; flex-wrap: wrap; gap: 10px; }
 .icn-chip {
     display: inline-flex;
@@ -198,8 +202,11 @@
     cursor: pointer;
     transition: border-color .15s, background-color .15s;
 }
-.icn-chip:hover { border-color: var(--icn-green); }
-.icn-chip[aria-pressed="true"] { border-color: var(--icn-green); background: var(--icn-green-soft); }
+/* The theme turns button text near-white on hover/focus; keep tool buttons readable. */
+.icn-tool .icn-chip:hover, .icn-tool .icn-chip:focus { color: var(--icn-text); background: #fff; border-color: var(--icn-green); }
+.icn-tool .icn-chip[aria-pressed="true"], .icn-tool .icn-chip[aria-pressed="true"]:hover, .icn-tool .icn-chip[aria-pressed="true"]:focus {
+    color: var(--icn-text); border-color: var(--icn-green); background: var(--icn-green-soft);
+}
 .icn-chip-dot { width: 12px; height: 12px; border-radius: 50%; flex: 0 0 12px; }
 .icn-chip-dot--veg { background: #7aa83a; }
 .icn-chip-dot--protein { background: #c0674a; }
@@ -240,9 +247,10 @@
     cursor: pointer;
     transition: border-color .15s, background-color .15s;
 }
-.icn-option:hover { border-color: var(--icn-green); background: #fbfdf7; }
+.icn-tool .icn-option:hover, .icn-tool .icn-option:focus { color: var(--icn-text); border-color: var(--icn-green); background: #fbfdf7; }
 .icn-option small { display: block; font-weight: 500; color: var(--icn-muted); margin-top: 3px; }
 .icn-quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; font-size: .85rem; color: var(--icn-muted); }
+.icn-tool .icn-link-btn:hover, .icn-tool .icn-link-btn:focus { background: none; color: var(--icn-green-dark); }
 .icn-link-btn { background: none; border: 0; color: var(--icn-green); font: 700 .9rem 'Plus Jakarta Sans', sans-serif; cursor: pointer; padding: 6px 0; }
 .icn-result h3 { font: 600 1.7rem/1.2 'Crimson Text', serif; color: var(--icn-olive); margin: 0 0 10px; }
 .icn-result-box { background: var(--icn-cream); border-radius: 12px; padding: 16px 18px; margin: 14px 0; line-height: 1.55; }
@@ -315,14 +323,15 @@
     gap: 10px;
     padding: 12px 18px 12px 14px;
     border-radius: 999px;
-    background: #25d366;
+    /* Darker WhatsApp green: white text and icon reach 5.4:1. */
+    background: #0b7a3b;
     color: #fff;
     font: 700 .95rem/1 'Plus Jakarta Sans', sans-serif;
     text-decoration: none;
     box-shadow: 0 6px 20px rgba(0, 0, 0, .22);
     transition: transform .15s, background-color .15s;
 }
-.icn-wa:hover { background: #1ebe5b; color: #fff; transform: translateY(-2px); }
+.icn-wa:hover, .icn-wa:focus { background: #0a6e35; color: #fff; transform: translateY(-2px); }
 .icn-wa svg { width: 26px; height: 26px; flex: 0 0 26px; }
 
 /* ---------- Language switch ---------- */
@@ -346,7 +355,8 @@
     font: 700 .8rem/1 'Plus Jakarta Sans', sans-serif;
     cursor: pointer;
 }
-.icn-lang button[aria-pressed="true"] { background: #fdfaf1; color: var(--icn-olive); }
+.icn-lang button:hover, .icn-lang button:focus { background: rgba(255, 255, 255, .2); color: #fdfaf1; }
+.icn-lang button[aria-pressed="true"], .icn-lang button[aria-pressed="true"]:hover, .icn-lang button[aria-pressed="true"]:focus { background: #fdfaf1; color: var(--icn-olive); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

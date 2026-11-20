@@ -30,8 +30,13 @@
     function openBooking(e, source) {
         window.ICN.track('booking_click', { source: source || 'tool' });
         if (window.innerWidth < 768) return; // let the link open normally
-        var w = window.open(CFG.bookingUrl, 'icnBooking', 'width=560,height=820,noopener=no');
-        if (w) { e.preventDefault(); try { w.focus(); } catch (err) { /* ignore */ } }
+        // Open a blank pop-up first and cut its link back to this tab before loading the
+        // scheduler, so the external page can't redirect the site (same as rel="noopener").
+        var w = window.open('', '_blank', 'width=560,height=820');
+        if (!w) return; // pop-up blocked: the link opens in a new tab instead
+        e.preventDefault();
+        try { w.opener = null; } catch (err) { /* ignore */ }
+        w.location.href = CFG.bookingUrl;
     }
     function bookBtn(label, source, cls) {
         return '<a class="icn-btn ' + (cls || 'icn-btn--primary') + '" href="' + esc(CFG.bookingUrl) +
@@ -42,14 +47,19 @@
         if (a) openBooking(e, a.getAttribute('data-icn-book'));
     });
 
-    /* Sends an email address to the configured email platform, or falls back to
-       opening a pre-filled email to the practice when none is configured. */
-    function submitEmail(email, subject, body) {
+    /* Sends an email address and message to the configured email platform, or falls
+       back to opening a pre-filled email to the practice when none is configured.
+       Resolves 'sent' only when the platform confirms it (a 2xx response; the platform
+       must allow CORS, as Formspree and similar form services do), otherwise 'error'. */
+    function submitEmail(email, subject, body, fields) {
         if (CFG.emailFormAction) {
             var fd = new FormData();
             fd.append('email', email);
             fd.append('source', subject);
-            return fetch(CFG.emailFormAction, { method: 'POST', body: fd, mode: 'no-cors' }).then(function () { return 'sent'; });
+            fd.append('message', body);
+            Object.keys(fields || {}).forEach(function (k) { fd.append(k, fields[k]); });
+            return fetch(CFG.emailFormAction, { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+                .then(function (res) { return res.ok ? 'sent' : 'error'; }, function () { return 'error'; });
         }
         location.href = 'mailto:' + CFG.email + '?subject=' + encodeURIComponent(subject) +
             '&body=' + encodeURIComponent(body + '\n\nEmail: ' + email);
@@ -201,7 +211,7 @@
                 ht: 'Peze sou manje ou renmen yo. Pa gen manje ki entèdi — n ap montre w kijan pou balanse asyèt ou pou l bon pou sante w.' })) + '</p></div>' +
             '<div class="icn-plate-grid">' +
             '<div class="icn-plate-col">' +
-            '<div class="icn-plate" role="img" aria-label="' + esc(t({ en: 'Your plate', ht: 'Asyèt ou' })) + '">' + zoneHtml('veg') + zoneHtml('protein') + zoneHtml('starch') + '</div>' +
+            '<div class="icn-plate" role="group" aria-label="' + esc(t({ en: 'Your plate', ht: 'Asyèt ou' })) + '">' + zoneHtml('veg') + zoneHtml('protein') + zoneHtml('starch') + '</div>' +
             '<div class="icn-side">' + (sides.length ? '<span class="icn-side-label">' + esc(t({ en: 'On the side', ht: 'Sou kote' })) + '</span>' : '') +
             sides.map(function (id) { return '<span class="icn-on-plate">' + esc(t(FOOD[id].name)) + '</span>'; }).join('') + '</div>' +
             '<div class="icn-meter" aria-live="polite">' + status.checks.map(function (c) {
@@ -340,8 +350,22 @@
     var QUIZ_THANKS = {
         sent: { en: 'Thank you! Check your email.', ht: 'Mèsi! Tcheke imèl ou.' },
         mailto: { en: 'Almost done: send the email that just opened so we can reply with your results.',
-                  ht: 'Prèske fini: voye imèl ki fenk louvri a pou nou ka reponn ou ak rezilta ou.' }
+                  ht: 'Prèske fini: voye imèl ki fenk louvri a pou nou ka reponn ou ak rezilta ou.' },
+        error: { en: 'Sorry, that didn’t go through. Please try again, or email us at ' + CFG.email + '.',
+                 ht: 'Padon, sa pa pase. Tanpri eseye ankò, oswa ekri nou nan ' + CFG.email + '.' }
     };
+
+    /* The full quiz result as plain text, in the visitor's language, for the email. */
+    function quizResultText() {
+        var g = GOAL_RESULT[quiz.answers.goal];
+        return t(g.title) + '\n\n' +
+            t({ en: 'Your tip:', ht: 'Konsèy ou:' }) + ' ' + t(g.tip) + ' ' + t(FOOD_RESULT[quiz.answers.food]) + '\n\n' +
+            t({ en: 'Best fit for you:', ht: 'Sa ki pi bon pou ou:' }) + ' ' + t(g.service) + '. ' + t(FORMAT_RESULT[quiz.answers.format]);
+    }
+    function focusQuestion(root) {
+        var focus = root.querySelector('#icn-q-title, #icn-quiz-result');
+        if (focus) focus.focus({ preventScroll: true });
+    }
     var quiz = { step: 0, answers: {}, sent: false };
 
     function renderQuiz() {
@@ -395,12 +419,11 @@
                 quiz.step++;
                 if (quiz.step === QUESTIONS.length) window.ICN.track('quiz_complete', { goal: quiz.answers.goal });
                 renderQuiz();
-                var focus = root.querySelector('#icn-q-title, #icn-quiz-result');
-                if (focus) focus.focus({ preventScroll: true });
+                focusQuestion(root);
                 return;
             }
-            if (e.target.closest('[data-quiz-back]')) { quiz.step = Math.max(0, quiz.step - 1); renderQuiz(); return; }
-            if (e.target.closest('[data-quiz-restart]')) { quiz = { step: 0, answers: {}, sent: false }; renderQuiz(); }
+            if (e.target.closest('[data-quiz-back]')) { quiz.step = Math.max(0, quiz.step - 1); renderQuiz(); focusQuestion(root); return; }
+            if (e.target.closest('[data-quiz-restart]')) { quiz = { step: 0, answers: {}, sent: false }; renderQuiz(); focusQuestion(root); }
         });
         root.addEventListener('submit', function (e) {
             var form = e.target.closest('[data-quiz-email]');
@@ -408,12 +431,12 @@
             e.preventDefault();
             var input = form.email;
             if (!input.checkValidity()) { input.reportValidity(); return; }
-            var g = GOAL_RESULT[quiz.answers.goal];
-            var body = window.ICN.lang() === 'ht'
-                ? 'Bonjou Willande,\n\nTanpri voye rezilta kesyonè mwen ak Gid pou Kòmanse a.\nObjektif mwen: ' + g.title.ht
-                : 'Hi Willande,\n\nPlease send me my quiz results and the Healthy Caribbean Starter Guide.\nMy goal: ' + g.title.en;
-            submitEmail(input.value, 'Health goal quiz: ' + quiz.answers.goal, body).then(function (mode) {
-                // 'sent' = delivered to the email platform; 'mailto' = only a draft was opened.
+            var body = t({ en: 'Hi Willande,\n\nPlease send me my quiz results and the Healthy Caribbean Starter Guide.\n\nMy results:\n',
+                ht: 'Bonjou Willande,\n\nTanpri voye rezilta kesyonè mwen ak Gid pou Kòmanse a.\n\nRezilta mwen:\n' }) + quizResultText();
+            var fields = { goal: quiz.answers.goal, food: quiz.answers.food, format: quiz.answers.format, language: window.ICN.lang() };
+            submitEmail(input.value, 'Health goal quiz: ' + quiz.answers.goal, body, fields).then(function (mode) {
+                // 'sent' = confirmed by the email platform; 'mailto' = only a draft was opened;
+                // 'error' = the platform rejected it or could not be reached.
                 quiz.sent = mode;
                 if (mode === 'sent') window.ICN.track('quiz_email');
                 var thanks = root.querySelector('[data-quiz-thanks]');
