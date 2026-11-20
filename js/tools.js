@@ -155,7 +155,8 @@
     function readSharedPlate() {
         try {
             var p = new URLSearchParams(location.search).get('plate');
-            if (p) plate.picked = p.split(',').filter(function (id) { return FOOD[id]; }).slice(0, 12);
+            // Keep every valid food from the link (duplicates dropped) so the recipient sees the same plate.
+            if (p) plate.picked = p.split(',').filter(function (id, i, all) { return FOOD[id] && all.indexOf(id) === i; });
         } catch (e) { /* ignore */ }
     }
 
@@ -336,6 +337,11 @@
         cooking: { en: 'Cooking classes and grocery tours, in-home in the Triangle area or virtual.', ht: 'Kou kwizin ak vizit makèt, lakay ou nan zòn Triangle oswa an liy.' },
         group: { en: 'Workshops and talks for churches, schools and community groups.', ht: 'Atelye ak konferans pou legliz, lekòl ak gwoup kominote.' }
     };
+    var QUIZ_THANKS = {
+        sent: { en: 'Thank you! Check your email.', ht: 'Mèsi! Tcheke imèl ou.' },
+        mailto: { en: 'Almost done: send the email that just opened so we can reply with your results.',
+                  ht: 'Prèske fini: voye imèl ki fenk louvri a pou nou ka reponn ou ak rezilta ou.' }
+    };
     var quiz = { step: 0, answers: {}, sent: false };
 
     function renderQuiz() {
@@ -370,7 +376,7 @@
                 '<label class="icn-sr" for="icn-quiz-email">' + esc(t({ en: 'Email address', ht: 'Adrès imèl' })) + '</label>' +
                 '<input id="icn-quiz-email" type="email" name="email" required autocomplete="email" placeholder="' + esc(t({ en: 'Your email', ht: 'Imèl ou' })) + '">' +
                 '<button type="submit" class="icn-btn icn-btn--green">' + esc(t({ en: 'Send it to me', ht: 'Voye l ban mwen' })) + '</button>' +
-                '</form><p class="icn-thanks" role="status" data-quiz-thanks>' + (quiz.sent ? esc(t({ en: 'Thank you! Check your email.', ht: 'Mèsi! Tcheke imèl ou.' })) : '') + '</p>' +
+                '</form><p class="icn-thanks" role="status" data-quiz-thanks>' + (quiz.sent ? esc(t(QUIZ_THANKS[quiz.sent])) : '') + '</p>' +
                 '<p class="icn-note">' + esc(t({ en: 'We never ask for medical details here. Your answers stay in your browser unless you send them.', ht: 'Nou pa janm mande detay medikal isit la. Repons ou rete nan navigatè w sòf si ou voye yo.' })) + '</p>' +
                 '</div>';
         }
@@ -406,11 +412,12 @@
             var body = window.ICN.lang() === 'ht'
                 ? 'Bonjou Willande,\n\nTanpri voye rezilta kesyonè mwen ak Gid pou Kòmanse a.\nObjektif mwen: ' + g.title.ht
                 : 'Hi Willande,\n\nPlease send me my quiz results and the Healthy Caribbean Starter Guide.\nMy goal: ' + g.title.en;
-            submitEmail(input.value, 'Health goal quiz: ' + quiz.answers.goal, body).then(function () {
-                quiz.sent = true;
-                window.ICN.track('quiz_email');
+            submitEmail(input.value, 'Health goal quiz: ' + quiz.answers.goal, body).then(function (mode) {
+                // 'sent' = delivered to the email platform; 'mailto' = only a draft was opened.
+                quiz.sent = mode;
+                if (mode === 'sent') window.ICN.track('quiz_email');
                 var thanks = root.querySelector('[data-quiz-thanks]');
-                if (thanks) thanks.textContent = t({ en: 'Thank you! Check your email.', ht: 'Mèsi! Tcheke imèl ou.' });
+                if (thanks) thanks.textContent = t(QUIZ_THANKS[mode]);
             });
         });
     }
